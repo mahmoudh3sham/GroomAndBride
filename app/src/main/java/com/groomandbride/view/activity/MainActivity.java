@@ -89,18 +89,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         performClickOnPosZeroMainCate();
 
         btnLoginNav.setOnClickListener(view -> {
-            //mListFromSplash.clear();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            //intent.putExtra("list", mListFromSplash);
             startActivity(intent);
-            finish();
+            //finish();
         });
         btnRegisterNav.setOnClickListener(view -> {
-            //mListFromSplash.clear();
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-            //intent.putExtra("list", mListFromSplash);
             startActivity(intent);
-            finish();
+            //finish();
         });
         searchEt.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SearchActivity.class)));
 
