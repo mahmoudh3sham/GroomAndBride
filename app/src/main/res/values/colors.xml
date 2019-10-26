@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fd6679</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#fd6679</color>
+    <color name="colorGray">#f6f6f6</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+
+
+    <color name="ordercancel">#f27c7c</color>
+    <color name="callmandob">#70c254</color>
+    <color name="whitegraycolor">#f2f2f2</color>
+    <color name="whitecolor">#ffffff</color>
+    <color name="blackgraycolor">#5e5e5e</color>
+    <color name="litegraycolor">#D3D3D3</color>
+    <color name="orangecolor">#ffa750</color>
+    <color name="greencolor">#008000</color>
+    <color name="greenlightcolor">#00F12C</color>
+    <color name="yellowcolor">#DBE11A</color>
+
+
+    <color name="goldcolor">#FFD700</color>
+    <color name="greenlcolor">#2CCF60</color>
+    <color name="bagecolor">#FCEEB6</color>
+    <color name="graycolorsad">#EFEFEF</color>
+    <color name="greeeeen">#3A7827</color>
+    <color name="foshiacolor">#8F1F3E</color>
+    <color name="greenlite">#30CE91</color>
+    <color name="black">#000000</color>
+
+
+
+    <array name="array_dot_active">
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/blackgraycolor</item>
+        <item>@color/blackgraycolor</item>
+        <item>@color/blackgraycolor</item>
+    </array>
+</resources>

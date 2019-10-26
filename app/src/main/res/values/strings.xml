@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Groom &amp; Bride</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="forget_text">Please write your email and click send button, the system will send you an email on this email.</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="feedback">Need any help?\nWe are here to help you</string>
+
+
+    <string name="intro1">Welcome</string>
+    <string name="intro1_desc">just a sample text for testing, just a sample text for testing, just a sample text for testing!</string>
+
+    <string name="intro2">Wedding Halls</string>
+    <string name="intro2_desc">just a sample text for testing, just a sample text for testing, just a sample text for testing!</string>
+    <string name="search_def">Search by hall name you are \n looking for</string>
+
+    <string name="intro3">Add to favorites</string>
+    <string name="intro3_desc">just a sample text for testing, just a sample text for testing, just a sample text for testing!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="network_error">Network Connection Error!</string>
+
+    <string name="error_empty_name">Enter your name</string>
+    <string name="error_empty_email">Enter your email</string>
+    <string name="error_empty_password">Enter your password</string>
+    <string name="error_empty_new_password">Enter your new password</string>
+    <string name="error_conflict_pass">Passwords does not match</string>
+    <string name="error_name">Name should be letters only</string>
+    <string name="error_email">Invalid email</string>
+    <string name="error_password">Password should be 6 chars at least</string>
+    <string name="error_empty_msg">Please enter your feedback!</string>
+    <string name="title_activity_map_location">Map</string>
+
+
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".view.activity.FeedBackActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar_with_back">
+    </include>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/lina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="@string/feedback"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/colorBlack"
+                android:text="Your email"/>
+
+            <EditText
+                android:id="@+id/emailFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/_10sdp"
+                android:hint="E-mail"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/inputs_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/colorBlack"
+                android:text="Tell us more"/>
+
+            <EditText
+                android:id="@+id/msgFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:gravity="top"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/_10sdp"
+                android:hint="Type here..."
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/inputs_gray"/>
+
+            <Button
+                android:id="@+id/btnSendFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="Send Feedback"
+                android:textAllCaps="false"
+                android:background="@drawable/button_login"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

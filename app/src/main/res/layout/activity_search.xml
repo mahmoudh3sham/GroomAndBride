@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".view.activity.SearchActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar_with_back_logo">
+    </include>
+
+    <LinearLayout
+        android:id="@+id/searchLina"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/searchET"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:hint="Search"
+            android:textColorHint="@color/blackgraycolor"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:textColor="@color/colorBlack"
+            android:background="@drawable/inputs_gray"/>
+        <TextView
+            android:id="@+id/searchBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recSearchRes"
+        android:layout_below="@+id/searchLina"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/searchTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/search_def"/>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

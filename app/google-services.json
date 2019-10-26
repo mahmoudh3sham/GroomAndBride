@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "464109168496",
+    "firebase_url": "https://groom-and-bride-app.firebaseio.com",
+    "project_id": "groom-and-bride-app",
+    "storage_bucket": "groom-and-bride-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464109168496:android:8c3fb95b5431c76f8ad1b5",
+        "android_client_info": {
+          "package_name": "com.groomandbride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464109168496-dt1jdfhrhbatmb03sgt49jmsnk6t2p8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.groomandbride",
+            "certificate_hash": "4234143613f1729e0ae30a4e2347651abef8ac26"
+          }
+        },
+        {
+          "client_id": "464109168496-k73r0motooe8vde3of7cklsgud10t054.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqJy_AucyJzZRTNCUwbA2bRuUML6TYA58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464109168496-k73r0motooe8vde3of7cklsgud10t054.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "464109168496-1v5uq5k1quqrb5ndqatiai6op395nidt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ramysabry1996.Groom---Bride"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

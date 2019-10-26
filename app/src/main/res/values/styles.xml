@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+    </style>
+
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/common_google_signin_btn_text_dark_default</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AlertDialog" parent="Base.Theme.MaterialComponents.Light.Dialog" />
+
+
+    <style name="myDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+
+        <item name="android:colorAccent" tools:ignore="NewApi">#213d67</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+
+    <style name="RatingBarCustomColor" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/graycolorsad</item>
+        <item name="colorControlActivated">@color/orangecolor</item>
+        <item name="ratingBarStyle">@style/Widget.AppCompat.RatingBar.Small</item>
+    </style>
+
+
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_custom</item>
+        <item name="android:indeterminateDrawable">@drawable/ratingbar_custom</item>
+        <item name="android:minHeight">@dimen/_50sdp</item>
+        <item name="android:maxHeight">@dimen/_50sdp</item>
+    </style>
+
+
+
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.7</item>
+    </style>
+
+
+</resources>

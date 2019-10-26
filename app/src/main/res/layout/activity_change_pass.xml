@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.activity.ChangePassActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar_with_back">
+    </include>
+
+
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/changePassTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:text="Change Password"/>
+
+            <LinearLayout
+                android:layout_below="@+id/changePassTxt"
+                android:id="@+id/lina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp">
+                    <EditText
+                        android:id="@+id/oldPassET"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:padding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/pass_et"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:background="@drawable/inputs_gray"
+                        android:hint="Password"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp">
+                    <EditText
+                        android:id="@+id/newPassET"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:padding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/pass_et"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:background="@drawable/inputs_gray"
+                        android:hint="New Password"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
+                    <EditText
+                        android:id="@+id/confirmNewPassET"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorBlack"
+                        android:padding="@dimen/_10sdp"
+                        android:drawableStart="@drawable/pass_et"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:background="@drawable/inputs_gray"
+                        android:hint="Confirm New Password"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnResetPass"
+                android:layout_below="@+id/lina"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="Reset Password"
+                android:textAllCaps="false"
+                android:background="@drawable/button_login"/>
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
