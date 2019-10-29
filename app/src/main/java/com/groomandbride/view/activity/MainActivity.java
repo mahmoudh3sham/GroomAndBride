@@ -87,6 +87,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         initMainCatRecycler(mMainCatList);
         initHallsRec();
         performClickOnPosZeroMainCate();
+        mHallsAdapter.notifyDataSetChanged();
 
         btnLoginNav.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);

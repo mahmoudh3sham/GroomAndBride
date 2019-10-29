@@ -7,6 +7,8 @@ import com.google.gson.GsonBuilder;
 import com.groomandbride.utils.SharedPrefsUtils;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -39,14 +41,17 @@ public class RetrofitApiClient {
                 return chain.proceed(builder.build());
             };
 
-            OkHttpClient client = new OkHttpClient.Builder()
-                    .addInterceptor(interceptor)
-                    .addInterceptor(headerInterceptor)
-                    .build();
+            OkHttpClient.Builder client = new OkHttpClient.Builder();
+            client.connectTimeout(240, TimeUnit.SECONDS);
+            client.writeTimeout(240, TimeUnit.SECONDS);
+            client.readTimeout(240, TimeUnit.SECONDS);
+
+            client.addInterceptor(interceptor).addInterceptor(headerInterceptor).build();
+
 
 
             retrofit = new Retrofit.Builder()
-                    .client(client)
+                    .client(client.build())
                     .baseUrl(BASE_URL)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create(gson))
