@@ -37,7 +37,7 @@ public class HallsAdapter extends RecyclerView.Adapter<HallsAdapter.HallsViewHol
     @Override
     public HallsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View layoutView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_hall, viewGroup, false);
-        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutView.setLayoutParams(lp);
         HallsViewHolder rcv = new HallsViewHolder(layoutView);
         return rcv;

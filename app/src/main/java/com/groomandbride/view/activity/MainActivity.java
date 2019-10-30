@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private MainCateAdapter mMainCatAdapter;
     private HallsAdapter mHallsAdapter;
     private ArrayList<MainCategory> mMainCatList = new ArrayList<>();
-    private ArrayList<Hall.DataBean> mListFromSplash = new ArrayList<>();
+    private ArrayList<Hall.DataBean> mListFromSplash;
     //private ArrayList<Hall.DataBean> mListOnPause = new ArrayList<>();
     HashMap<String,Integer> hashMapHalls;
 
@@ -79,15 +79,17 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         /*if (SharedPrefsUtils.getInstance().isFirstTimeHome()){
             splashImg.setVisibility(View.VISIBLE);
         }*/
-        mListFromSplash = getIntent().getParcelableArrayListExtra("list");
 
+        mListFromSplash = getIntent().getParcelableArrayListExtra("list");
+        Log.e("ss", "onCreate: "+ mListFromSplash.size());
 
         handleNavItems();
         loadMainCate();
         initMainCatRecycler(mMainCatList);
         initHallsRec();
         performClickOnPosZeroMainCate();
-        mHallsAdapter.notifyDataSetChanged();
+
+
 
         btnLoginNav.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -204,15 +206,17 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private void loadAllFromSplash(ArrayList<Hall.DataBean> mListFromSplash) {
         hideProgress();
-        int startIndex = mHallsAdapter.mHallsList.size();
-        mHallsAdapter.mHallsList.addAll(mListFromSplash);
-        mHallsAdapter.notifyItemRangeInserted(startIndex, 10);
+        if (mListFromSplash != null && mListFromSplash.size() > 0){
+            int startIndex = mHallsAdapter.mHallsList.size();
+            mHallsAdapter.mHallsList.addAll(mListFromSplash);
+            mHallsAdapter.notifyItemRangeInserted(startIndex, 10);
+            mHallsAdapter.notifyDataSetChanged();
+        }
     }
 
 
     private void initHallsRec(){
         mHallsAdapter = new HallsAdapter(new ArrayList<>(), this, itemHall -> {
-            //TODO go to hall details
             Intent intent = new Intent(getApplicationContext(), HallDetailesActivity.class);
             intent.putExtra("hall", itemHall);
             startActivity(intent);
