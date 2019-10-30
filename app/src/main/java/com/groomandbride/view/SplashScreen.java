@@ -11,7 +11,9 @@ import com.groomandbride.R;
 import com.groomandbride.data.models.Hall;
 import com.groomandbride.data.network.ApiInterface;
 import com.groomandbride.data.network.RetrofitApiClient;
+import com.groomandbride.utils.SharedPrefsUtils;
 import com.groomandbride.view.activity.BaseActivity;
+import com.groomandbride.view.activity.MainActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,10 +61,18 @@ public class SplashScreen extends BaseActivity {
                     if (response.body().getData().size() != 0){
                         mHomeAllList.addAll(response.body().getData());
 
-                        Intent intent = new Intent(SplashScreen.this, WelcomeActivity.class);
-                        intent.putExtra("list", mHomeAllList);
-                        startActivity(intent);
-                        finish();
+                        if (SharedPrefsUtils.getInstance().isFirstTimeHome()){
+                            Intent intent = new Intent(SplashScreen.this, WelcomeActivity.class);
+                            intent.putExtra("list", mHomeAllList);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                            intent.putExtra("list", mHomeAllList);
+                            startActivity(intent);
+                            finish();
+                        }
+
                     }
 
                 }
