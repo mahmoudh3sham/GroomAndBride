@@ -3,6 +3,8 @@ package com.groomandbride.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -47,6 +49,8 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getWindow().setBackgroundDrawableResource(R.drawable.background);
@@ -65,7 +69,7 @@ public class LoginActivity extends BaseActivity {
             startActivity(intent);
             finish();
         }else {
-            goToMain();
+            finish();
         }
     }
     @OnClick(R.id.forget_pass)
@@ -166,7 +170,7 @@ public class LoginActivity extends BaseActivity {
             startActivity(intent);
             finish();
         }else {
-            goToMain();
+            finish();
         }
     }
 
