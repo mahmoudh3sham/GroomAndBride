@@ -75,13 +75,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_main);
         initVars();
 
-        //FirebaseMessaging.getInstance().subscribeToTopic("test");
-        /*if (SharedPrefsUtils.getInstance().isFirstTimeHome()){
-            splashImg.setVisibility(View.VISIBLE);
-        }*/
 
         mListFromSplash = getIntent().getParcelableArrayListExtra("list");
-        Log.e("ss", "onCreate: "+ mListFromSplash.size());
 
         handleNavItems();
         loadMainCate();
@@ -104,26 +99,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         searchEt.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SearchActivity.class)));
 
     }
-
-/*
-
-    private void hideSplashImg() {
-        splashImg.setVisibility(View.GONE);
-        SharedPrefsUtils.getInstance().setFirstTimeHome(false);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        SharedPrefsUtils.getInstance().setFirstTimeHome(true);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        SharedPrefsUtils.getInstance().setFirstTimeHome(true);
-    }
-*/
 
     private void handleNavItems() {
         if (!SharedPrefsUtils.getInstance().isUserLogged()){
@@ -315,7 +290,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             @Override
             public void onFailure(Call<Hall> call, Throwable t) {
                 hideProgress();
-                //hideSplashImg();
                 Log.e("Error", "onFailure: " + t.getMessage() );
                 showNoteDialog("Error", String.valueOf(getText(R.string.network_error)));
             }

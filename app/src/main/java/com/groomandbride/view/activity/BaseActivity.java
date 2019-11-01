@@ -216,8 +216,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(this);
         View dialogView = factory.inflate(R.layout.custom_dialog_note, null);
         AlertDialog mAlertDialog = new AlertDialog.Builder(this).create();
+        mAlertDialog.setCanceledOnTouchOutside(false);
         mAlertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mAlertDialog.setView(dialogView);
+
 
         Button btnOk = dialogView.findViewById(R.id.okBtn);
         TextView titleTV = dialogView.findViewById(R.id.title);
