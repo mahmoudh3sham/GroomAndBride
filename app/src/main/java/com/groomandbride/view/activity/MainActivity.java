@@ -68,6 +68,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     int mMainCatClicked = 0; //0 for all category and 1 for subcategory
     String mCurrentMainCatId;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,14 +76,23 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_main);
         initVars();
 
-
         mListFromSplash = getIntent().getParcelableArrayListExtra("list");
 
         handleNavItems();
         loadMainCate();
         initMainCatRecycler(mMainCatList);
         initHallsRec();
-        performClickOnPosZeroMainCate();
+
+        if (mListFromSplash != null && mListFromSplash.size() > 0){
+            pageNumAll = 1;
+            loadAllFromSplash(mListFromSplash);
+            mHallsAdapter.notifyDataSetChanged();
+        }else {
+            pageNumAll = 0;
+            loadAllHalls(pageNumAll);
+            mHallsAdapter.notifyDataSetChanged();
+        }
+        //performClickOnPosZeroMainCate();
 
 
 
@@ -181,12 +191,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private void loadAllFromSplash(ArrayList<Hall.DataBean> mListFromSplash) {
         hideProgress();
-        if (mListFromSplash != null && mListFromSplash.size() > 0){
-            int startIndex = mHallsAdapter.mHallsList.size();
-            mHallsAdapter.mHallsList.addAll(mListFromSplash);
-            mHallsAdapter.notifyItemRangeInserted(startIndex, 10);
-            mHallsAdapter.notifyDataSetChanged();
-        }
+        int startIndex = mHallsAdapter.mHallsList.size();
+        mHallsAdapter.mHallsList.addAll(mListFromSplash);
+        mHallsAdapter.notifyItemRangeInserted(startIndex, 10);
+        mHallsAdapter.notifyDataSetChanged();
     }
 
 
@@ -198,8 +206,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         });
         mHallsRecLayoutManager = new LinearLayoutManager(MainActivity.this);
         mHallsRecycler.setLayoutManager(mHallsRecLayoutManager);
-        mHallsRecycler.setNestedScrollingEnabled(true);
-        mHallsRecycler.setHasFixedSize(true);
         mHallsRecycler.setAdapter(mHallsAdapter);
 
         //Pagination
@@ -366,7 +372,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_home) {
-            performClickOnPosZeroMainCate();
+            //performClickOnPosZeroMainCate();
         } else if (id == R.id.nav_profile) {
             startActivity(new Intent(MainActivity.this, ProfileActivity.class));
         } else if (id == R.id.nav_fav) {

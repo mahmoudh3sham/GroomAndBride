@@ -67,7 +67,7 @@
         <activity android:name=".view.activity.PrivacyPolicyActivity" />
         <activity android:name=".view.activity.TermsActivity" />
         <activity android:name=".view.activity.AboutUsActivity" />
-        <activity android:name=".view.WelcomeActivity"></activity>
+        <activity android:name=".view.WelcomeActivity" />
         <activity
             android:name=".view.activity.RegisterActivity"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
