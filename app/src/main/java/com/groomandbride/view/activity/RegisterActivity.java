@@ -61,7 +61,7 @@ public class RegisterActivity extends BaseActivity {
 
     @OnClick(R.id.backRegBtn)
     void onBackPress(){
-        goToLogin();
+        finish();
     }
 
     @OnClick(R.id.btnRegister)
@@ -186,7 +186,7 @@ public class RegisterActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        goToLogin();
+        finish();
     }
 
     private void goToLogin(){
