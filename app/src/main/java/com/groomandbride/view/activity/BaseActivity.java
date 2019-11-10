@@ -169,28 +169,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         mAlertDialog.show();
     }
 
-    protected void showLogoutDialog(){
-        LayoutInflater factory = LayoutInflater.from(this);
-        View dialogView = factory.inflate(R.layout.custom_dialog_logout, null);
-        AlertDialog mAlertDialog = new AlertDialog.Builder(this).create();
-        mAlertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        mAlertDialog.setView(dialogView);
-
-        Button btnLogout = dialogView.findViewById(R.id.logoutBtn);
-        Button btnCancel = dialogView.findViewById(R.id.cancelBtn);
-
-
-        btnCancel.setOnClickListener(view -> mAlertDialog.dismiss());
-
-        btnLogout.setOnClickListener(view -> {
-            SharedPrefsUtils.getInstance().removeAccessToken();
-            SharedPrefsUtils.getInstance().clearUser();
-            mAlertDialog.dismiss();
-        });
-
-        mAlertDialog.show();
-    }
-
     protected void showNoteDialog(String title, String note){
         LayoutInflater factory = LayoutInflater.from(this);
         View dialogView = factory.inflate(R.layout.custom_dialog_note, null);

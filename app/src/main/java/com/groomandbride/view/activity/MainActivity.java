@@ -1,9 +1,12 @@
 package com.groomandbride.view.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +32,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -387,6 +391,29 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
         }else if (id == R.id.nav_logout) {
             showLogoutDialog();
+        }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+    protected void showLogoutDialog(){
+        LayoutInflater factory = LayoutInflater.from(this);
+        View dialogView = factory.inflate(R.layout.custom_dialog_logout, null);
+        AlertDialog mAlertDialog = new AlertDialog.Builder(this).create();
+        mAlertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mAlertDialog.setView(dialogView);
+
+        Button btnLogout = dialogView.findViewById(R.id.logoutBtn);
+        Button btnCancel = dialogView.findViewById(R.id.cancelBtn);
+
+
+        btnCancel.setOnClickListener(view -> mAlertDialog.dismiss());
+
+        btnLogout.setOnClickListener(view -> {
+            SharedPrefsUtils.getInstance().removeAccessToken();
+            SharedPrefsUtils.getInstance().clearUser();
             navigationView.setCheckedItem(R.id.nav_home);
             navigationView.getMenu().findItem(R.id.nav_profile).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_fav).setVisible(false);
@@ -394,10 +421,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             navLoginRegLin.setVisibility(View.VISIBLE);
             userName_nav.setVisibility(View.GONE);
             usermail_nav.setVisibility(View.GONE);
-        }
+            mAlertDialog.dismiss();
+        });
 
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+        mAlertDialog.show();
     }
+
 
 }
